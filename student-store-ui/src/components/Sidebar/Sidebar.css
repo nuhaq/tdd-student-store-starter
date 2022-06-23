@@ -3,11 +3,11 @@
     display: none;
 }
 .small-toggle-button {
-    padding: 10px;
-
+    padding: 20px;
 }
 .big-toggle-button {
-    padding: 10px;
+    margin-left: 143px;
+    padding: 20px;
 }
 
 .small-sidebar {
@@ -28,7 +28,7 @@
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: rgb(23, 11, 43); /* Black */
+    background-color: rgb(23, 11, 43);
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
   }
