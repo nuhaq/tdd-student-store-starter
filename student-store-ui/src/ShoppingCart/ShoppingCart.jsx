@@ -2,12 +2,7 @@ import "./ShoppingCart.css"
 import * as React from "react"
 
 export default function ShoppingCart(props) {
-    // add that amount to the subtotal, 
-    // and render the total cost 
-    // rounded up to exactly 2 decimal 
-    // places inside an element with the 
-    // className of total-price. Make sure 
-    // it is prefixed with a dollar sign ($)!
+
     const getTotal = (tax) => {
         let total = 0
         props.shoppingCart.forEach(item => {
@@ -21,8 +16,8 @@ export default function ShoppingCart(props) {
             No items added to cart yet. Start shopping now!
             </div>
             {props.shoppingCart.map(item => {
-            return ( <><div className="cart-product-name"> {props.products[item.id-1].name} </div>
-                <p className="cart-product-quantity">x{item.quantity}</p></>
+            return ( <><div className="cart-product-name" key={item.id}> {props.products[item.id-1].name} </div>
+                <p className="cart-product-quantity" key={item.id}>x{item.quantity}</p></>
             )})}
         <div className={props.shoppingCart.length!==0 ? "subtotal" : "subtotal hidden"}>
             Subtotal: ${getTotal(1)}

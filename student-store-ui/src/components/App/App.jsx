@@ -91,6 +91,7 @@ export default function App() {
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
           <Home shoppingCart={shoppingCart} products={products} handleAddItemToCart={handleAddItemToCart} 
           handleRemoveItemToCart={handleRemoveItemToCart}/>
+          <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>
         </main>
       </BrowserRouter>
     </div>
