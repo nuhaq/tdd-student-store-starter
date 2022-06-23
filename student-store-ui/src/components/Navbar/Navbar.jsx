@@ -9,5 +9,6 @@ export default function Navbar() {
       <a id="nav-button" href="#about-us">About Us</a> |
       <a id="nav-button" href="#contact-us">Contact Us</a>
     </nav>
+    
   )
 }

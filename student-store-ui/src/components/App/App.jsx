@@ -8,25 +8,34 @@ import { useEffect, useState } from "react"
 import {BrowserRouter} from "react-router-dom"
 
 export default function App() {
-  const [pics, setPics] = useState([])
+  const [products, setProducts] = useState([])
+  const [isFetching, setFetching] = useState(true)
+  //whether or not the App is currently fetching the products from the API.
+  const [error, setError] = useState("")
+  const [isOpen, setisOpen] = useState(false)
+  const [shoppingCart, setCart] = useState([])
+
 
   async function fetchData() {
     const response = await axios.get("https://codepath-store-api.herokuapp.com/store")
-    setPics(response.data.products) //array of products
+    setProducts(response.data.products) //array of products
   }
   useEffect(() => {
     fetchData()
   },[])
 
 
-  const handleAddItemToCart = () => {
+  const handleAddItemToCart = (productId) => {
 
   }
 
-  const handleRemoveItemToCart = () => {
-    
+  const handleRemoveItemToCart = (productId) => {
+
   }
 
+  const handleOnToggle = () => {
+    setisOpen(!isOpen)
+  }
 
 
 
@@ -36,8 +45,9 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar />
-          <Home products={pics} handleAddItemToCart={handleAddItemToCart} 
+          <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart}
+          products={products}/>
+          <Home products={products} handleAddItemToCart={handleAddItemToCart} 
           handleRemoveItemToCart={handleRemoveItemToCart}/>
         </main>
       </BrowserRouter>

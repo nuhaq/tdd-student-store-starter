@@ -1,0 +1,17 @@
+.hidden {
+    display: none;
+}
+.media {
+  size: 100px;
+  max-width: auto;
+  max-height: 100%;
+  width: 100%;
+
+}
+
+.product-grid img {
+    width: 300px;
+    height: 300px;
+   
+
+}

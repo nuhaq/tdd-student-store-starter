@@ -1,5 +1,5 @@
 .navbar {
-    list-style-type: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -11,7 +11,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    float:left;
+    float:right;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 25px;
     font-size: 20px;

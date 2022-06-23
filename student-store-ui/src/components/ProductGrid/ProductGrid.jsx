@@ -1,11 +1,6 @@
 import * as React from "react"
 import ProductCard from "../ProductCard/ProductCard"
-
-import axios from "axios"
-import { useEffect } from "react"
-import {BrowserRouter} from "react-router-dom"
-
-
+import "./ProductGrid.css"
 
 export default function ProductGrid(props) {
     console.log(props.products) //an array of product objects
