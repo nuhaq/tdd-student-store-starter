@@ -10,10 +10,10 @@ export default function ProductCard(props) {
             </h2>
             <p className="product-price"> ${props.product.price.toFixed(2)} </p>
             <div className={props.showDescription ? "product-description" : "product-description hidden"}>
-                {props.showDescription}
+                {props.product.description}
             </div>
             <div className="media">
-                <Link to="/product/${props.productId}"><img src={props.product.image}/></Link>
+                <Link to={`/products/${props.productId}`}><img src={props.product.image}/></Link>
             </div>
             <div className={props.quantity===0 ? "product-quantity hidden" : "product-quantity"}>
                 In Cart: {props.quantity}

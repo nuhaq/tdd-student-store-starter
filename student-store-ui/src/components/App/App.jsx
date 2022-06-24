@@ -6,7 +6,7 @@ import ProductDetail from "../ProductDetail/ProductDetail"
 import "./App.css"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import {BrowserRouter} from "react-router-dom"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 export default function App() {
   const [products, setProducts] = useState([])
@@ -84,16 +84,16 @@ export default function App() {
     return (
     <div className="app">
       <BrowserRouter>
-        <main>
-          {/* YOUR CODE HERE! */}
-          <Navbar />
-          <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart}
-          products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-          handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
-          <Home shoppingCart={shoppingCart} products={products} handleAddItemToCart={handleAddItemToCart} 
-          handleRemoveItemToCart={handleRemoveItemToCart}/>
-          <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>
-        </main>
+      <Navbar />
+      <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart}
+      products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+      handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
+      <Routes>
+        <Route path="/" element={<Home shoppingCart={shoppingCart} products={products} handleAddItemToCart={handleAddItemToCart} 
+        handleRemoveItemToCart={handleRemoveItemToCart}/>}/>
+        <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart} 
+        isFetching={isFetching} setFetching={setFetching} handleRemoveItemToCart={handleRemoveItemToCart}/>}/>
+      </Routes>
       </BrowserRouter>
     </div>
   )

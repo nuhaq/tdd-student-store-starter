@@ -16,8 +16,9 @@ export default function ShoppingCart(props) {
             No items added to cart yet. Start shopping now!
             </div>
             {props.shoppingCart.map(item => {
-            return ( <><div className="cart-product-name" key={item.id}> {props.products[item.id-1].name} </div>
-                <p className="cart-product-quantity" key={item.id}>x{item.quantity}</p></>
+                console.log(item)
+            return ( <div key={item.id}><div  className="cart-product-name"> {props.products[item.id-1].name} </div>
+                <p className="cart-product-quantity" >x{item.quantity}</p></div>
             )})}
         <div className={props.shoppingCart.length!==0 ? "subtotal" : "subtotal hidden"}>
             Subtotal: ${getTotal(1)}
