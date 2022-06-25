@@ -10,8 +10,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 export default function App() {
   const [products, setProducts] = useState([])
-  const [isFetching, setFetching] = useState(true)
-  //whether or not the App is currently fetching the products from the API.
+  const [isFetching, setFetching] = useState(false)
   const [error, setError] = useState("")
   const [isOpen, setisOpen] = useState(false)
   const [shoppingCart, setCart] = useState([])
@@ -42,7 +41,6 @@ export default function App() {
     cartTemp[index].quantity += 1
     setCart(cartTemp);
    }
-    // add the price of the product to the total price of the shoppingCart.
   }
 
   const handleRemoveItemToCart = (productId) => {
@@ -76,9 +74,11 @@ export default function App() {
     setForm({name: name, value: value})
 
   }
+
+  
   
   const handleOnSubmitCheckoutForm = () => {
-
+    //TODO next week 
   }
 
     return (
@@ -89,10 +89,10 @@ export default function App() {
       products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange}
       handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
       <Routes>
-        <Route path="/" element={<Home shoppingCart={shoppingCart} products={products} handleAddItemToCart={handleAddItemToCart} 
+        <Route path="/" element={<Home setFetching={setFetching} shoppingCart={shoppingCart} products={products} handleAddItemToCart={handleAddItemToCart} 
         handleRemoveItemToCart={handleRemoveItemToCart}/>}/>
-        <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart} 
-        isFetching={isFetching} setFetching={setFetching} handleRemoveItemToCart={handleRemoveItemToCart}/>}/>
+        <Route path="/product/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart} 
+        isFetching={isFetching} setFetching={setFetching} shoppingCart={shoppingCart} handleRemoveItemToCart={handleRemoveItemToCart}/>}/>
       </Routes>
       </BrowserRouter>
     </div>
