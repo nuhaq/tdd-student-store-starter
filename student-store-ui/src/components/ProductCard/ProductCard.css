@@ -9,9 +9,35 @@
 
 }
 
-.product-grid img {
-    width: 300px;
-    height: 300px;
-   
+.product-card {
+  width: 300px;
+}
+
+.product-description {
+  font-size: 20px;
+}
+.media img {
+  margin: 15px;
+  width: 600px;
+  height: auto;
+  max-height: 600px;
+}
+
+.product-quantity {
+  margin: 5px;
+}
+
+.add {
+  padding: 8px;
+  margin: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: whitesmoke;
+
+}
+.remove {
+  padding: 8px;
+  margin: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: whitesmoke;
 
 }

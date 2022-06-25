@@ -9,7 +9,7 @@ export default function Home(props) {
       <Hero/>
       <ProductGrid shoppingCart={props.shoppingCart} products={props.products} 
       handleRemoveItemToCart={props.handleRemoveItemToCart}
-      handleAddItemToCart={props.handleAddItemToCart}/>
+      handleAddItemToCart={props.handleAddItemToCart} setFetching={props.setFetching}/>
     </div>
   )
 }

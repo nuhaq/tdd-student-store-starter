@@ -13,5 +13,5 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-left: 155px; /* Same as the width of the sidebar */
+  margin-left: 105px;
 }

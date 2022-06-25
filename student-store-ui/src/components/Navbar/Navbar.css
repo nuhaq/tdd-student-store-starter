@@ -1,6 +1,6 @@
 .navbar {
   list-style-type: none;
-  margin: 0;
+  margin-right: 100px;
   padding: 0;
   overflow: hidden;
   background-color:rgb(23, 11, 43);
@@ -15,9 +15,13 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 25px;
     font-size: 20px;
+    margin: 0px;
   }
   #nav-button:hover {
     background-color: rgb(84, 48, 142);
   }
-
+  img {
+    height: 80px;
+    width: auto;
+  }
   

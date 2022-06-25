@@ -1,9 +1,31 @@
 .intro {
     font-size: 50px;
     text-align: center;
-    color: aliceblue;
+    color:rgb(23, 11, 43);
+    margin-top: 30px;
 }
 
 .hero {
+    background-color: rgb(162, 140, 197);
+    justify-content: center;
+    text-align: right;
+    margin-right: 100px;
+
+}
+.hero-img {
+    width: 100px;
+    height: auto;
+    display:flex;
+    flex-direction: column;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    float: right;
+}
+.text {
     margin-top: 20px;
-    background-color: rgb(162, 140, 197);}
+    
+    text-align: left;
+    font-size: 24px;
+    color:rgb(23, 11, 43);
+}

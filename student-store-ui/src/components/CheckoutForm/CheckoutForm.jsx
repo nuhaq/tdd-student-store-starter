@@ -2,10 +2,11 @@ import "./CheckoutForm.css"
 import * as React from "react"
 
 export default function CheckoutForm() {
+    //TODO next week
     return (
         <div className="checkout-form">
-            <input className="checkout-form-input"></input><br></br>
-            <input className="checkout-form-input"></input>
+            <input id="name" className="checkout-form-input"></input><br></br>
+            <input id="email" className="checkout-form-input"></input>
         </div>
     )
 }
