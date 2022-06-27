@@ -7,6 +7,7 @@ import "./App.css"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import NotFound from "../NotFound/NotFound"
 
 export default function App() {
   const [products, setProducts] = useState([])
@@ -14,7 +15,8 @@ export default function App() {
   const [error, setError] = useState("")
   const [isOpen, setisOpen] = useState(false)
   const [shoppingCart, setCart] = useState([])
-  const [checkoutForm, setForm] = useState({})
+  const [checkoutForm, setForm] = useState({name: "", email: ""})
+  const [message, setMessage] = useState("")
 
 
   async function fetchData() {
@@ -29,12 +31,12 @@ export default function App() {
   const handleAddItemToCart = (productId) => {
    let index = -1;
    shoppingCart.forEach((item, idx) => {
-    if (item.id === productId) {
+    if (item.itemId === productId) {
       index = idx;
     }
    })
    if (index === -1) { //not found
-    const obj = {id: productId, quantity: 1}
+    const obj = {itemId: productId, quantity: 1}
     setCart((prevState)=>[...prevState, obj])
    } else {
     let cartTemp = [...shoppingCart]
@@ -45,23 +47,22 @@ export default function App() {
 
   const handleRemoveItemToCart = (productId) => {
     const found = shoppingCart.find(item => {
-      return item.id === productId
+      return item.itemId === productId
     })
 
     if (found) {
       const newState = []
       shoppingCart.map(obj => {
-        if (obj.id === productId) {
+        if (obj.itemId === productId) {
           const temp = obj.quantity - 1;
           if (temp!==0) {
-            newState.push({id: productId, quantity: temp});
+            newState.push({itemId: productId, quantity: temp});
           }
         } else {
           newState.push(obj);
         }
       });
       setCart(newState)
-      console.log(shoppingCart)
     }
   }
 
@@ -69,30 +70,34 @@ export default function App() {
     setisOpen(!isOpen)
   }
 
-  
-  const handleOnCheckoutFormChange = (name, value) => {
-    setForm({name: name, value: value})
 
-  }
+  function handleOnCheckoutFormChange(name, value) {
+    let tempCheck = {...checkoutForm}
+    tempCheck[name] = value
+    setForm(tempCheck)
 
-  
-  
-  const handleOnSubmitCheckoutForm = () => {
-    //TODO next week 
-  }
+}
+
+async function handleOnSubmitCheckoutForm(checkoutForm, shoppingCart) {
+  let response = await axios.post("https://codepath-store-api.herokuapp.com/store", {user: checkoutForm, shoppingCart: shoppingCart}).catch((err) => {
+    setMessage(err.response.data.error.message); setError(err); return;
+  })
+  setMessage("Success! " + response.data.purchase.receipt.lines.join(" ") + "!")
+}
 
     return (
     <div className="app">
       <BrowserRouter>
       <Navbar />
-      <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart}
+      <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart} setCart={setCart} setForm={setForm}
       products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-      handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
+      handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} setMessage={setMessage} message={message}/>
       <Routes>
-        <Route path="/" element={<Home setFetching={setFetching} shoppingCart={shoppingCart} products={products} handleAddItemToCart={handleAddItemToCart} 
+        <Route path="/" element={<Home setFetching={setFetching} shoppingCart={shoppingCart} products={products} handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemToCart={handleRemoveItemToCart}/>}/>
-        <Route path="/product/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart} 
+        <Route path="/product/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart} setError={setError} error={error}
         isFetching={isFetching} setFetching={setFetching} shoppingCart={shoppingCart} handleRemoveItemToCart={handleRemoveItemToCart}/>}/>
+        <Route path="*" element={<NotFound error={"check URL"}/>}/>
       </Routes>
       </BrowserRouter>
     </div>

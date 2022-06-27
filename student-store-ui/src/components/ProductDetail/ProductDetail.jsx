@@ -4,6 +4,7 @@ import {useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
 import ProductView from "../ProductView/ProductView"
+import NotFound from "../NotFound/NotFound"
 
 
 export default function ProductDetail(props) {
@@ -12,7 +13,7 @@ export default function ProductDetail(props) {
     const quantityHelper = (id) => {
         let quantity = 0
         props.shoppingCart.forEach(e => {
-            if (e.id === id) {
+            if (e.itemId === id) {
                 quantity = e.quantity
             }
         })
@@ -21,27 +22,30 @@ export default function ProductDetail(props) {
 
     async function fetchProd() {
         props.setFetching(true)
-        const response = await axios.get(`https://codepath-store-api.herokuapp.com/store/${params.productId}`)
+        const response = await axios.get(`https://codepath-store-api.herokuapp.com/store/${params.productId}`).catch(err => props.setError(err))
         console.log(response)
         if (response) {
             setProduct(response.data.product)
-            console.log("HERE")
         }
         props.setFetching(false)
     }
     useEffect(() => {
-        console.log("HERE")
         fetchProd()
-        console.log(product)
     }, [])
+    if (props.error !== "") {
+        return <NotFound error={"product doesn't exist"}/>
+    }
 
     return (
-        <div className="product-view">
+        <div className="product-detail">
+            {props.isFetching ? <h1>Loading...</h1>:
+          (product===undefined) ? <NotFound error={props.error} /> :
             <ProductView product={product} quantity={quantityHelper(product.id)} productId={product.id}
-                handleAddItemToCart= {props.handleAddItemToCart} 
+                handleAddItemToCart= {props.handleAddItemToCart}
                 handleRemoveItemToCart={props.handleRemoveItemToCart} setFetching={props.setFetching}
-                />
+                />}
         </div>
     )
+
 
 }

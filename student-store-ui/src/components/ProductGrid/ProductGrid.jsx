@@ -7,11 +7,11 @@ export default function ProductGrid(props) {
 
     const [button, setButton] = useState("All Categories")
     const [search, setSearch] = useState("")
-   
+
     const quantityHelper = (id) => {
         let quantity = 0
         props.shoppingCart.forEach(e => {
-            if (e.id === id) {
+            if (e.itemId === id) {
                 quantity = e.quantity
             }
         })
@@ -41,12 +41,13 @@ export default function ProductGrid(props) {
         </form>
 
         <div className="categories">
-            <button onClick={() => { setButton("All Categories") } }>All Categories</button>
-            <button onClick={() => { setButton("clothing") } }>Clothing</button>
-            <button onClick={() => { setButton("food") } }>Food</button>
-            <button onClick={() => { setButton("accessories") } }>Accessories</button>
-            <button onClick={() => { setButton("tech") } }>Tech</button>
-        </div><div className="product-grid"> 
+            <button id="categories" onClick={() => { setButton("All Categories") } }>All Categories</button>
+            <button id="categories" onClick={() => { setButton("clothing") } }>Clothing</button>
+            <button id="categories" onClick={() => { setButton("food") } }>Food</button>
+            <button id="categories" onClick={() => { setButton("accessories") } }>Accessories</button>
+            <button id="categories" onClick={() => { setButton("tech") } }>Tech</button>
+        </div>
+        <div className="product-grid">
         {props.products.filter(getCategories).filter(getSearch).map(e => {
             return <ProductCard showDescription={false} key={e.name} quantity={quantityHelper(e.id)}
                 product={e} productId={e.id} handleAddItemToCart={props.handleAddItemToCart}

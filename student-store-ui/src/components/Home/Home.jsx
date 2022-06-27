@@ -7,7 +7,7 @@ export default function Home(props) {
   return (
     <div className="home">
       <Hero/>
-      <ProductGrid shoppingCart={props.shoppingCart} products={props.products} 
+      <ProductGrid shoppingCart={props.shoppingCart} products={props.products}
       handleRemoveItemToCart={props.handleRemoveItemToCart}
       handleAddItemToCart={props.handleAddItemToCart} setFetching={props.setFetching}/>
       <div className="about-us" id="about-us">
@@ -18,9 +18,9 @@ export default function Home(props) {
               <p>We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.</p>
               <p>All proceeds go towards bringing high quality CS education to college students around the country.</p>
             </div>
-              {/* <div class="media">
-                <img src="/assets/giant_codepath.6952ef57.svg" alt="shop pic"/>
-              </div> */}
+              <div class="media">
+                <img src="https://media.istockphoto.com/photos/man-at-the-shopping-picture-id868718238?k=20&m=868718238&s=612x612&w=0&h=w42q_p1qak9lhVhXKDw1r964uV-AmzSSzC0UsMlMARQ=" alt="shop pic"/>
+              </div>
           </div>
       </div>
     </div>

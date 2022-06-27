@@ -1,12 +1,13 @@
 import "./ShoppingCart.css"
 import * as React from "react"
+import CheckoutForm from "../CheckoutForm/CheckoutForm"
 
 export default function ShoppingCart(props) {
 
     const getTotal = (tax) => {
         let total = 0
         props.shoppingCart.forEach(item => {
-            total += props.products[item.id-1].price * (item.quantity)
+            total += props.products[item.itemId-1].price * (item.quantity)
         })
         return (total*tax).toFixed(2)
     }
@@ -17,7 +18,7 @@ export default function ShoppingCart(props) {
             </div>
             {props.shoppingCart.map(item => {
                 console.log(item)
-            return ( <div key={item.id}><div  className="cart-product-name"> {props.products[item.id-1].name} </div>
+            return ( <div key={item.itemId}><div  className="cart-product-name"> {props.products[item.itemId-1].name} </div>
                 <p className="cart-product-quantity" >x{item.quantity}</p></div>
             )})}
         <div className={props.shoppingCart.length!==0 ? "subtotal" : "subtotal hidden"}>
