@@ -6,6 +6,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 ![](https://github.com/nuhaq/tdd-student-store-starter/blob/main/giphy%20(1).gif)
 ![](https://github.com/nuhaq/tdd-student-store-starter/blob/main/giphy.gif)
+
 ![](https://github.com/nuhaq/tdd-student-store-starter/blob/main/giphy3.gif)
 ### Application Features
 
