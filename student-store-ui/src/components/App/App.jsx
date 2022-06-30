@@ -20,7 +20,7 @@ export default function App() {
 
 
   async function fetchData() {
-    const response = await axios.get("https://codepath-store-api.herokuapp.com/store")
+    const response = await axios.get("localhost:3001/store")
     setProducts(response.data.products)
   }
   useEffect(() => {
@@ -79,7 +79,7 @@ export default function App() {
 }
 
 async function handleOnSubmitCheckoutForm(checkoutForm, shoppingCart) {
-  let response = await axios.post("https://codepath-store-api.herokuapp.com/store", {user: checkoutForm, shoppingCart: shoppingCart}).catch((err) => {
+  let response = await axios.post("localhost:3001/store", {user: checkoutForm, shoppingCart: shoppingCart}).catch((err) => {
     setMessage(err.response.data.error.message); setError(err); return;
   })
   setMessage("Success! " + response.data.purchase.receipt.lines.join(" ") + "!")

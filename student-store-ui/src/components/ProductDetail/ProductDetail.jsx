@@ -22,7 +22,7 @@ export default function ProductDetail(props) {
 
     async function fetchProd() {
         props.setFetching(true)
-        const response = await axios.get(`https://codepath-store-api.herokuapp.com/store/${params.productId}`).catch(err => props.setError(err))
+        const response = await axios.get(`localhost:3001/store/${params.productId}`).catch(err => props.setError(err))
         console.log(response)
         if (response) {
             setProduct(response.data.product)
