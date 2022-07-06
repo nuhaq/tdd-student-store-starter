@@ -48,7 +48,7 @@ export default function ProductGrid(props) {
             <button id="categories" onClick={() => { setButton("tech") } }>Tech</button>
         </div>
         <div className="product-grid">
-        {props.products.filter(getCategories).filter(getSearch).map(e => {
+        {props.products?.filter(getCategories).filter(getSearch).map(e => {
             return <ProductCard showDescription={false} key={e.name} quantity={quantityHelper(e.id)}
                 product={e} productId={e.id} handleAddItemToCart={props.handleAddItemToCart}
                 handleRemoveItemToCart={props.handleRemoveItemToCart} setFetching={props.setFetching} />

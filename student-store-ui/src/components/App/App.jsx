@@ -20,8 +20,9 @@ export default function App() {
 
 
   async function fetchData() {
-    const response = await axios.get("localhost:3001/store")
-    setProducts(response.data.products)
+    const response = await axios.get("http://localhost:3001/store")
+    setProducts(response.data)
+
   }
   useEffect(() => {
     fetchData()
@@ -79,10 +80,13 @@ export default function App() {
 }
 
 async function handleOnSubmitCheckoutForm(checkoutForm, shoppingCart) {
-  let response = await axios.post("localhost:3001/store", {user: checkoutForm, shoppingCart: shoppingCart}).catch((err) => {
-    setMessage(err.response.data.error.message); setError(err); return;
-  })
-  setMessage("Success! " + response.data.purchase.receipt.lines.join(" ") + "!")
+  try {
+    let response = await axios.post("http://localhost:3001/store", {shoppingCart: shoppingCart, user: checkoutForm})
+    setMessage("Success! " + response.data.receipt.join(" \n"))
+  } catch(err) {
+    console.log(err)
+    setMessage(err.message); setError(err); return;
+  }
 }
 
     return (

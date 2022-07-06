@@ -69,7 +69,8 @@ class Store {
             receipt
         };
 
-        return storage.get("purchases").push(purchase).write()
+        storage.get("purchases").push(purchase).write()
+        return purchase;
 
     }
 }

@@ -145,5 +145,203 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 0,
+      "name": "Mena",
+      "email": "abc@gmail.com",
+      "total": "$2.15",
+      "receipt": [
+        "Showing receipt for Mena with email: abc@gmail.com:",
+        "Purchased 1 of Rice Krispies for $0.99",
+        "Purchased 1 of Rice Krispies for $0.99",
+        "Subtotal: $1.98.",
+        "With taxes and fees, the total was $2.15."
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Nuha",
+      "email": "abc@gmail.com",
+      "total": "$25.55",
+      "receipt": [
+        "Showing receipt for Nuha with email: abc@gmail.com:",
+        "Purchased 3 of Fruit Medley for $22.50",
+        "Purchased 1 of Rice Krispies for $0.99",
+        "Subtotal: $23.49.",
+        "With taxes and fees, the total was $25.55."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "nuah",
+      "email": "hi",
+      "total": "$3.25",
+      "receipt": [
+        "Showing receipt for nuah with email: hi:",
+        "Purchased 1 of Cinnamon Rolls for $2.99",
+        "Subtotal: $2.99.",
+        "With taxes and fees, the total was $3.25."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "nuah",
+      "email": "hi",
+      "total": "$1.63",
+      "receipt": [
+        "Showing receipt for nuah with email: hi:",
+        "Purchased 1 of Flamin Hot Cheetos for $1.50",
+        "Subtotal: $1.50.",
+        "With taxes and fees, the total was $1.63."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "nuha",
+      "email": "hi",
+      "total": "$1.63",
+      "receipt": [
+        "Showing receipt for nuha with email: hi:",
+        "Purchased 1 of Flamin Hot Cheetos for $1.50",
+        "Subtotal: $1.50.",
+        "With taxes and fees, the total was $1.63."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Nuha",
+      "email": "abc@gmail.com",
+      "total": "$25.55",
+      "receipt": [
+        "Showing receipt for Nuha with email: abc@gmail.com:",
+        "Purchased 3 of Fruit Medley for $22.50",
+        "Purchased 1 of Rice Krispies for $0.99",
+        "Subtotal: $23.49.",
+        "With taxes and fees, the total was $25.55."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Nuha",
+      "email": "abc@gmail.com",
+      "total": "$25.55",
+      "receipt": [
+        "Showing receipt for Nuha with email: abc@gmail.com:",
+        "Purchased 3 of Fruit Medley for $22.50",
+        "Purchased 1 of Rice Krispies for $0.99",
+        "Subtotal: $23.49.",
+        "With taxes and fees, the total was $25.55."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Nuha",
+      "email": "abc@gmail.com",
+      "total": "$28.00",
+      "receipt": [
+        "Showing receipt for Nuha with email: abc@gmail.com:",
+        "Purchased 3 of Fruit Medley for $22.50",
+        "Purchased 1 of Coconut Water for $3.25",
+        "Subtotal: $25.75.",
+        "With taxes and fees, the total was $28.00."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "nuha",
+      "email": "hi",
+      "total": "$3.26",
+      "receipt": [
+        "Showing receipt for nuha with email: hi:",
+        "Purchased 2 of Flamin Hot Cheetos for $3.00",
+        "Subtotal: $3.00.",
+        "With taxes and fees, the total was $3.26."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "nuha",
+      "email": "abc@def.com",
+      "total": "$1.63",
+      "receipt": [
+        "Showing receipt for nuha with email: abc@def.com:",
+        "Purchased 1 of Flamin Hot Cheetos for $1.50",
+        "Subtotal: $1.50.",
+        "With taxes and fees, the total was $1.63."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "nuha",
+      "email": "abc@def.com",
+      "total": "$3.26",
+      "receipt": [
+        "Showing receipt for nuha with email: abc@def.com:",
+        "Purchased 2 of Flamin Hot Cheetos for $3.00",
+        "Subtotal: $3.00.",
+        "With taxes and fees, the total was $3.26."
+      ]
+    },
+    {
+      "id": 11,
+      "name": "nuha",
+      "email": "hi",
+      "total": "$1.63",
+      "receipt": [
+        "Showing receipt for nuha with email: hi:",
+        "Purchased 1 of Flamin Hot Cheetos for $1.50",
+        "Subtotal: $1.50.",
+        "With taxes and fees, the total was $1.63."
+      ]
+    },
+    {
+      "id": 12,
+      "name": "1",
+      "email": "2",
+      "total": "$1.63",
+      "receipt": [
+        "Showing receipt for 1 with email: 2:",
+        "Purchased 1 of Flamin Hot Cheetos for $1.50",
+        "Subtotal: $1.50.",
+        "With taxes and fees, the total was $1.63."
+      ]
+    },
+    {
+      "id": 13,
+      "name": "nuha",
+      "email": "abc@def.com",
+      "total": "$4.89",
+      "receipt": [
+        "Showing receipt for nuha with email: abc@def.com:",
+        "Purchased 3 of Flamin Hot Cheetos for $4.50",
+        "Subtotal: $4.50.",
+        "With taxes and fees, the total was $4.89."
+      ]
+    },
+    {
+      "id": 14,
+      "name": "nuah",
+      "email": "1",
+      "total": "$3.26",
+      "receipt": [
+        "Showing receipt for nuah with email: 1:",
+        "Purchased 2 of Flamin Hot Cheetos for $3.00",
+        "Subtotal: $3.00.",
+        "With taxes and fees, the total was $3.26."
+      ]
+    },
+    {
+      "id": 15,
+      "name": "1",
+      "email": "2",
+      "total": "$9.75",
+      "receipt": [
+        "Showing receipt for 1 with email: 2:",
+        "Purchased 3 of Cinnamon Rolls for $8.97",
+        "Subtotal: $8.97.",
+        "With taxes and fees, the total was $9.75."
+      ]
+    }
+  ]
 }

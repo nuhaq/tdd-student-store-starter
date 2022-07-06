@@ -18,7 +18,7 @@ export default function Home(props) {
               <p>We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.</p>
               <p>All proceeds go towards bringing high quality CS education to college students around the country.</p>
             </div>
-              <div class="media">
+              <div className="media">
                 <img src="https://media.istockphoto.com/photos/man-at-the-shopping-picture-id868718238?k=20&m=868718238&s=612x612&w=0&h=w42q_p1qak9lhVhXKDw1r964uV-AmzSSzC0UsMlMARQ=" alt="shop pic"/>
               </div>
           </div>
