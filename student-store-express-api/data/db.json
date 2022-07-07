@@ -354,6 +354,46 @@
         "Subtotal: $59.97.",
         "With taxes and fees, the total was $65.22."
       ]
+    },
+    {
+      "id": 17,
+      "name": "nuha",
+      "email": "hi",
+      "total": "$2.15",
+      "createdAt": "7/7/2022, 11:56:00 AM",
+      "receipt": [
+        "Showing receipt for nuha with email: hi:",
+        "Purchased 2 of Rice Krispies for $1.98",
+        "Subtotal: $1.98.",
+        "With taxes and fees, the total was $2.15."
+      ]
+    },
+    {
+      "id": 18,
+      "name": "1",
+      "email": "2",
+      "total": "$3.26",
+      "createdAt": "7/7/2022, 11:57:50 AM",
+      "receipt": [
+        "Showing receipt for 1 with email: 2:",
+        "Purchased 2 of Flamin Hot Cheetos for $3.00",
+        "Subtotal: $3.00.",
+        "With taxes and fees, the total was $3.26."
+      ]
+    },
+    {
+      "id": 19,
+      "name": "1",
+      "email": "2",
+      "total": "$3.26",
+      "createdAt": "7/7/2022, 11:58:03 AM",
+      "receipt": [
+        "Showing receipt for 1 with email: 2:",
+        "Purchased 2 of Flamin Hot Cheetos for $3.00",
+        "Subtotal: $3.00.",
+        "With taxes and fees, the total was $3.26.",
+        "Created at: 7/7/2022, 11:58:03 AM"
+      ]
     }
   ]
 }

@@ -30,6 +30,7 @@ class Store {
         })
         receipt.push(`Subtotal: ${data.subtotal}.`)
         receipt.push(`With taxes and fees, the total was ${data.total}.`)
+        receipt.push(`Created at: ${new Date().toLocaleString('en-US', { timeZone: 'PST' })}`)
         return receipt
 
     }
@@ -66,6 +67,7 @@ class Store {
             name: userInfo.name,
             email: userInfo.email,
             total,
+            createdAt: new Date().toLocaleString('en-US', { timeZone: 'PST' }),
             receipt
         };
 
