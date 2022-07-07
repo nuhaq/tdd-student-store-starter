@@ -342,6 +342,18 @@
         "Subtotal: $8.97.",
         "With taxes and fees, the total was $9.75."
       ]
+    },
+    {
+      "id": 16,
+      "name": "nuha",
+      "email": "hi",
+      "total": "$65.22",
+      "receipt": [
+        "Showing receipt for nuha with email: hi:",
+        "Purchased 3 of Bar Code Shirts for $59.97",
+        "Subtotal: $59.97.",
+        "With taxes and fees, the total was $65.22."
+      ]
     }
   ]
 }

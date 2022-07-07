@@ -25,7 +25,7 @@ export default function ProductDetail(props) {
         const response = await axios.get(`http://localhost:3001/store/${params.productId}`).catch(err => props.setError(err))
         console.log(response)
         if (response) {
-            setProduct(response.data.product)
+            setProduct(response.data)
         }
         props.setFetching(false)
     }
@@ -33,6 +33,7 @@ export default function ProductDetail(props) {
         fetchProd()
     }, [])
     if (props.error !== "") {
+        console.log(props.error)
         return <NotFound error={"product doesn't exist"}/>
     }
 
